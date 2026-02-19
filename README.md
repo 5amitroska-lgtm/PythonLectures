@@ -1,5 +1,4 @@
-/lectures/        # Notes from each lecture
-/examples/        # Demonstration scripts
-/exercises/       # Practice tasks and homework
-/projects/        # Mini projects created during the course
-README.md         # Project overview
+# Notes from each lectures
+# Demonstration scripts
+# Practice tasks and homework
+# Mini projects created during the course
