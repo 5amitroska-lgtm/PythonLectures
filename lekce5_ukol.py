@@ -35,7 +35,7 @@ for string in random_codes:
         if iterator > 0:
             if aktualny_znak==letter:
                 pocet_rovnakych+=1
-                if pocet_rovnakych>1:
+                if pocet_rovnakych==2:
                     vysledny_zoznam.append(string)
             else:
                 pocet_rovnakych=0
