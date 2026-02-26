@@ -8,6 +8,7 @@ def is_adult(age: int)-> bool:
         return True
     else:
         return False
+
 #--------------------------------------------------------------
 #Funkce ověří zda uživatelské jméno je alespoň 4 znaky dlouhé
 #----------------------------------------------------------------
