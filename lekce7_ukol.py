@@ -2,6 +2,13 @@
 # Funkce ověří zda je uživatel dospělý
 #----------------------------------------------------------------
 def is_adult(age: int)-> bool:
+    """Funkcia, ktora overi ci je uzivatel dospely
+
+    Args:
+        age (int): vek uzivatela
+
+    Returns:
+        bool: True ak je dospely inak False"""
     if age is None:
         return False
     elif age >= 18:
@@ -13,6 +20,13 @@ def is_adult(age: int)-> bool:
 #Funkce ověří zda uživatelské jméno je alespoň 4 znaky dlouhé
 #----------------------------------------------------------------
 def is_name_valid(username: str)-> bool:
+    """Funkcia ktora overi ci uzivatelske meno ma aspon 4 znaky
+
+    Args:
+        username (str): uzivatelske meno
+
+    Returns:
+        bool: True ak ma minimalne 4 znaky inak False"""
     if username is None:
         return False
     elif len(username)>=4:
@@ -25,9 +39,19 @@ def is_name_valid(username: str)-> bool:
 #Uvnitř funkce zkontroluj, zda je uživatel dospělý a jeho jméno je validní.
 #---------------------------------------------------------------------------
 def create_user( username: str,age: int ,email: str)-> dict:
+    """Funkcia vytvori slovnik reprezentujuci uzivatela
+    Args:
+        username (str): uzivateslke meno
+        age (int): vek uzivatela
+        email (str): email uzivatela
+
+    Returns:
+        dist: vytvori, dokumentuje a validuje uzivatela"""
     user={}
     user_info={}
-    if(is_adult(age) and is_name_valid(username)):
+    is_adult_var=is_adult(age)
+    is_name_valid_var=is_name_valid(username)
+    if(is_adult_var and is_name_valid_var):
         user["success"]=True
         user_info["username"]=username
         user_info["age"]=age
@@ -35,9 +59,9 @@ def create_user( username: str,age: int ,email: str)-> dict:
         user["user"]=user_info
     else:
         user["success"] = False
-        if is_adult(age):
+        if is_adult_var:
             user["error"] = "Error: Meno ma menej ako 4 znaky"
-        elif is_name_valid(username):
+        elif is_name_valid_var:
             user["error"]="Error: User nie je plnolety"
         else:
             user["error"]="Error: Meno ma menej ako 4 znaky a user nie je plnolety."
@@ -46,7 +70,13 @@ def create_user( username: str,age: int ,email: str)-> dict:
 #------------------------------------------------------------------------------------------------------------------------------
 #Funkce vytiskne uživatele do konzole s libovolným formátováním, případně vytiskne chybovou zprávu při neúspěšném vytvoření
 #------------------------------------------------------------------------------------------------------------------------------
-def print_user_info(user: dict):
+def print_user_info(user: dict)->None:
+    """Funkcia vypise uzivatela do konzole
+    Args:
+        user (dict): vytvoreny uzivatel
+
+    Returns:
+        None"""
     print(user)
 
 #------------------------------------------------------------------------------------------------------------
